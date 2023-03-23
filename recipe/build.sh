@@ -7,6 +7,7 @@ cp $BUILD_PREFIX/share/libtool/build-aux/config.* support/
             --build=${BUILD}    \
             --host=${HOST}      \
             --disable-static    \
+            --with-curses       \
             || { cat config.log; exit 1; }
 make SHLIB_LIBS="$(pkg-config --libs ncurses)" -j${CPU_COUNT} ${VERBOSE_AT}
 make install
