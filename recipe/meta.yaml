@@ -7,10 +7,12 @@ package:
 source:
   url: https://ftp.gnu.org/gnu/readline/readline-{{ version }}.tar.gz
   sha256: 3feb7171f16a84ee82ca18a36d7b9be109a52c04f492a053331d7d1095007c35
+  patches:
+    - 0001-Readline-8.2-patch-1-fix-crash-when-readline-is-star.patch
 
 build:
   skip: true  # [win]
-  number: 1
+  number: 2
   run_exports:
     # change soname at major ver: https://abi-laboratory.pro/tracker/timeline/readline/
     - {{ pin_subpackage('readline') }}
