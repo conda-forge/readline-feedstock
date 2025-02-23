@@ -5,7 +5,7 @@ MACOSX_SDK_VERSION:
 c_compiler:
 - clang
 c_compiler_version:
-- '16'
+- '18'
 channel_sources:
 - conda-forge
 channel_targets:
@@ -14,5 +14,7 @@ macos_machine:
 - arm64-apple-darwin20.0.0
 ncurses:
 - '6'
+readline:
+- '8'
 target_platform:
 - osx-arm64
