@@ -21,12 +21,15 @@ requirements:
   build:
     - pkg-config
     - {{ compiler('c') }}
+    - sysroot_linux-64
     - make
     - libtool
   host:
     - ncurses
+    - sysroot_linux-64
   run:
     - ncurses
+    - sysroot_linux-64
 
 test:
   commands:
