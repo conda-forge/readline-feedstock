@@ -9,8 +9,6 @@ source:
   - https://ftp.gnu.org/gnu/readline/readline-{{ version }}.tar.gz
   - https://ftpmirror.gnu.org/readline/readline-{{ version }}.tar.gz
   sha256: fe5383204467828cd495ee8d1d3c037a7eba1389c22bc6a041f627976f9061cc
-  patches:
-    - 0001-Readline-8.2-patch-1-fix-crash-when-readline-is-star.patch
 
 build:
   skip: true  # [win]
