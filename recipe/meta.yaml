@@ -1,18 +1,18 @@
-{% set version = "8.2" %}
+{% set version = "8.3" %}
 
 package:
   name: readline
   version: {{ version }}
 
 source:
-  url: https://ftp.gnu.org/gnu/readline/readline-{{ version }}.tar.gz
-  sha256: 3feb7171f16a84ee82ca18a36d7b9be109a52c04f492a053331d7d1095007c35
-  patches:
-    - 0001-Readline-8.2-patch-1-fix-crash-when-readline-is-star.patch
+  url:
+  - https://ftp.gnu.org/gnu/readline/readline-{{ version }}.tar.gz
+  - https://ftpmirror.gnu.org/readline/readline-{{ version }}.tar.gz
+  sha256: fe5383204467828cd495ee8d1d3c037a7eba1389c22bc6a041f627976f9061cc
 
 build:
   skip: true  # [win]
-  number: 2
+  number: 0
   run_exports:
     # change soname at major ver: https://abi-laboratory.pro/tracker/timeline/readline/
     - {{ pin_subpackage('readline') }}
@@ -21,6 +21,7 @@ requirements:
   build:
     - pkg-config
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - make
     - libtool
   host:
