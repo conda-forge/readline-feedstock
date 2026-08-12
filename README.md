@@ -40,6 +40,13 @@ Current build status
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/readline-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_" alt="variant">
                 </a>
               </td>
+            </tr><tr>
+              <td>osx_arm64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=1835&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/readline-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_" alt="variant">
+                </a>
+              </td>
             </tr>
           </tbody>
         </table>
@@ -216,7 +223,6 @@ Feedstock Maintainers
 * [@asmeurer](https://github.com/asmeurer/)
 * [@croth1](https://github.com/croth1/)
 * [@jakirkham](https://github.com/jakirkham/)
-* [@mingwandroid](https://github.com/mingwandroid/)
 * [@msarahan](https://github.com/msarahan/)
 * [@ocefpaf](https://github.com/ocefpaf/)
 * [@pelson](https://github.com/pelson/)
