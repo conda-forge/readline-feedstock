@@ -1,50 +1,53 @@
-{% set version = "8.3" %}
+schema_version: 1
+
+context:
+  version: "8.3"
 
 package:
   name: readline
-  version: "{{ version }}"
+  version: ${{ version }}
 
 source:
   url:
-  - https://ftp.gnu.org/gnu/readline/readline-{{ version }}.tar.gz
-  - https://ftpmirror.gnu.org/readline/readline-{{ version }}.tar.gz
+    - https://ftp.gnu.org/gnu/readline/readline-${{ version }}.tar.gz
+    - https://ftpmirror.gnu.org/readline/readline-${{ version }}.tar.gz
   sha256: fe5383204467828cd495ee8d1d3c037a7eba1389c22bc6a041f627976f9061cc
 
 build:
-  skip: true  # [win]
-  number: 1
-  run_exports:
-    # change soname at major ver: https://abi-laboratory.pro/tracker/timeline/readline/
-    - {{ pin_subpackage('readline') }}
+  skip:
+    - win
+  number: 2
 
 requirements:
   build:
     - pkg-config
-    - {{ compiler('c') }}
-    - {{ stdlib("c") }}
+    - ${{ compiler('c') }}
+    - ${{ stdlib('c') }}
     - make
     - libtool
   host:
     - ncurses
   run:
     - ncurses
+  run_exports:
+    # Change soname at major version: https://abi-laboratory.pro/tracker/timeline/readline/
+    - ${{ pin_subpackage('readline') }}
 
-test:
-  commands:
-  {% set readline_libs = [
-    'libreadline',
-    'libhistory'
-  ] %}
-  {% for lib in readline_libs %}
-    - test ! -f ${PREFIX}/lib/{{ lib }}.a
-    - test -f ${PREFIX}/lib/{{ lib }}${SHLIB_EXT}  # [not win]
-  {% endfor %}
+tests:
+  - package_contents:
+      lib:
+        - readline
+        - history
+      files:
+        not_exists:
+          - lib/libreadline.a
+          - lib/libhistory.a
 
 about:
-  home: https://cnswww.cns.cwru.edu/php/chet/readline/rltop.html
+  homepage: https://cnswww.cns.cwru.edu/php/chet/readline/rltop.html
   license: GPL-3.0-only
   license_file: COPYING
-  summary: library for editing command lines as they are typed in
+  summary: Library for editing command lines as they are typed in
 
 extra:
   recipe-maintainers:
