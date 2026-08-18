@@ -222,6 +222,7 @@ Feedstock Maintainers
 
 * [@asmeurer](https://github.com/asmeurer/)
 * [@croth1](https://github.com/croth1/)
+* [@h-vetinari](https://github.com/h-vetinari/)
 * [@jakirkham](https://github.com/jakirkham/)
 * [@msarahan](https://github.com/msarahan/)
 * [@ocefpaf](https://github.com/ocefpaf/)
