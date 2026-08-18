@@ -7,7 +7,7 @@ Home: https://cnswww.cns.cwru.edu/php/chet/readline/rltop.html
 
 Package license: GPL-3.0-only
 
-Summary: library for editing command lines as they are typed in
+Summary: Library for editing command lines as they are typed in
 
 Current build status
 ====================
