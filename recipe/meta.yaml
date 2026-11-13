@@ -9,10 +9,18 @@ source:
   - https://ftp.gnu.org/gnu/readline/readline-{{ version }}.tar.gz
   - https://ftpmirror.gnu.org/readline/readline-{{ version }}.tar.gz
   sha256: fe5383204467828cd495ee8d1d3c037a7eba1389c22bc6a041f627976f9061cc
+  # Official upstream patches from https://ftp.gnu.org/gnu/readline/readline-8.3-patches/
+  patches:
+    - official-patches/readline83-001
+    - official-patches/readline83-002
+    - official-patches/readline83-003
+    - official-patches/readline83-004
+    - official-patches/readline83-005
+    - official-patches/readline83-006
 
 build:
   skip: true  # [win]
-  number: 1
+  number: 2
   run_exports:
     # change soname at major ver: https://abi-laboratory.pro/tracker/timeline/readline/
     - {{ pin_subpackage('readline') }}
